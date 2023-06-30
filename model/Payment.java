@@ -23,7 +23,7 @@ public class Payment {
         this.id = id;
     }
 
-    // Calcola il totale delle tasse per tutti gli articoli in questo pagamento
+    // calcolo tot tasse per tutti items di questo pagamento
     public BigDecimal getTotalSalesTax() {
         BigDecimal totalSalesTax = BigDecimal.ZERO;
         for (Item item : itemsList) {
@@ -32,7 +32,7 @@ public class Payment {
         return totalSalesTax;
     }
 
-    // Calcola il prezzo totale (comprensivo di tasse) per tutti gli articoli in questo pagamento
+    // calcola prezzo totale (comprensivo di tasse) per tutti gli articoli in questo pagamento
     public BigDecimal getTotalAmount() {
         BigDecimal totalAmount = BigDecimal.ZERO;
         for (Item item : itemsList) {

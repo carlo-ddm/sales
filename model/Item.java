@@ -70,7 +70,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    // Calcola le tasse di vendita per questo articolo
+    // calcolo tasse di vendita per specifico articolo
     public BigDecimal getSalesTax() {
         BigDecimal salesTax = BigDecimal.ZERO;
 
@@ -82,7 +82,7 @@ public class Item {
             salesTax = salesTax.add(price.multiply(BigDecimal.valueOf(TaxRate.IMPORT_DUTY.getRate())));
         }
 
-        // Arrotondamento al più vicino 0.05
+        // arrotondo al più vicino 0.05 (Ma non funziona maledizioneeee!!!!)
         salesTax = salesTax.divide(BigDecimal.valueOf(0.05));
         salesTax = new BigDecimal(Math.round(salesTax.doubleValue()));
         salesTax = salesTax.multiply(BigDecimal.valueOf(0.05));
@@ -90,7 +90,7 @@ public class Item {
         return salesTax.multiply(BigDecimal.valueOf(quantity));
     }
 
-    // Calcola il prezzo totale (comprensivo di tasse) per questo articolo
+    // calcola prezzo totale (comprensivo di tasse) per questo articolo
     public BigDecimal getTotalPrice() {
         return price.multiply(BigDecimal.valueOf(quantity)).add(getSalesTax());
     }
