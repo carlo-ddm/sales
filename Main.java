@@ -76,7 +76,13 @@ public class Main {
         System.out.printf("Total: %.2f\n", totalPrice);
     }
 
-    // Estrazione parti per linea di input
+    
+    /**
+     *                  ** Estrazione di parti per linea di input ** capolavoro che non funziona
+     * estraggo parti per creare item 
+     * @param inputLine
+     * @return item
+     */
     private static Item createItemFromLine(String inputLine) {
         String[] parts = inputLine.split(" ");
         int quantity = Integer.parseInt(parts[0]);
