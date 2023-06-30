@@ -20,6 +20,10 @@ Il progetto è strutturato nel seguente modo:
 
 Per eseguire il progetto, compila e avvia il file `Main.java`. L'applicazione leggerà i dati di input dai file nella cartella `data` e stamperà i dettagli del ricevuto, compresi gli articoli acquistati, le tasse di vendita pagate e il costo totale.
 
+## Nota
+
+E' presente un bug che non sono riuscito a risolvere. Il bug è relativo al calcolo sulla tassa di importazione sull'input 3. Il codice è commentato in quello specifico punto, lì offro una soluzione ragionevole al problema. Tuttavia il problema persiste.
+
 ## Licenza
 
 Questo progetto è rilasciato sotto la licenza MIT.
