@@ -1,4 +1,5 @@
 package model;
+
 import constants.TaxRate;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -82,9 +83,9 @@ public class Item {
         }
 
         // Arrotondamento al più vicino 0.05
-        salesTax = salesTax.multiply(BigDecimal.valueOf(20));
-        salesTax = salesTax.setScale(0, RoundingMode.UP);
-        salesTax = salesTax.divide(BigDecimal.valueOf(20), RoundingMode.HALF_UP);
+        salesTax = salesTax.divide(BigDecimal.valueOf(0.05));
+        salesTax = new BigDecimal(Math.round(salesTax.doubleValue()));
+        salesTax = salesTax.multiply(BigDecimal.valueOf(0.05));
 
         return salesTax.multiply(BigDecimal.valueOf(quantity));
     }
