@@ -92,8 +92,10 @@ public class Main {
             nameBuilder.append(parts[i]).append(" ");
         }
         String name = nameBuilder.toString().trim();
-        boolean isImported = inputLine.contains("imported")
-                && (inputLine.indexOf("imported") < inputLine.indexOf(parts[1]));
+        boolean isImported = inputLine.contains("imported");
+        // La linea di codice appena sotto corregge l'output 2 ma sballa completamente l'output 3  L'errore è in questo punto ma non riesco a correggerlo!!! L'errore ha a che fare con "imported" che all'ultima voce dell'outout tre deve essere considerato come un nome e non come realmente importato e quindi tassabile.
+                // && (inputLine.indexOf("imported") < inputLine.indexOf(parts[1]));
+
         // Ennesimo tentativo di correzione prima e ultima voce di Output 3, fallito. L'approccio di cui sopra funzionava nella versione semplificata. Nel refactoring incontro un problema che non sono riuscito a risolvere. Di seguito un tentativo di correzione che non ha funzionato, ma che reputo valido (arroccato ma valido).
 
         // if (inputLine.contains("imported box of chocolates")) {
