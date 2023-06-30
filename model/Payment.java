@@ -1,0 +1,52 @@
+package model;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Payment {
+
+    private Integer id;
+    private List<Item> itemsList;
+
+    public Payment(Integer id, List<Item> items) {
+        setId(id);
+        this.itemsList = new ArrayList<>();
+        items.forEach(item -> itemsList.add(new Item(item)));
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    // Calcola il totale delle tasse per tutti gli articoli in questo pagamento
+    public BigDecimal getTotalSalesTax() {
+        BigDecimal totalSalesTax = BigDecimal.ZERO;
+        for (Item item : itemsList) {
+            totalSalesTax = totalSalesTax.add(item.getSalesTax());
+        }
+        return totalSalesTax;
+    }
+
+    // Calcola il prezzo totale (comprensivo di tasse) per tutti gli articoli in questo pagamento
+    public BigDecimal getTotalAmount() {
+        BigDecimal totalAmount = BigDecimal.ZERO;
+        for (Item item : itemsList) {
+            totalAmount = totalAmount.add(item.getTotalPrice());
+        }
+        return totalAmount;
+    }
+
+    @Override
+    public Payment clone() {
+        List<Item> clonedItemsList = new ArrayList<>();
+        for (Item item : this.itemsList) {
+            clonedItemsList.add(new Item(item));
+        }
+        return new Payment(this.id, clonedItemsList);
+    }
+}
