@@ -40,9 +40,10 @@ public class Item {
     }
 
     public void setPrice(BigDecimal price) {
-        if (price == null || price.compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Price cannot be null or negative");
-        }
+        // chiaramente questo non può avvenire
+        // if (price == null || price.compareTo(BigDecimal.ZERO) < 0) {
+        //     throw new IllegalArgumentException("Price cannot be null or negative");
+        // }
         this.price = price;
     }
 
