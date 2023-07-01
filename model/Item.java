@@ -12,11 +12,11 @@ public class Item {
     private int quantity;
 
     public Item(String name, BigDecimal price, boolean isExemptFromTax, boolean isImported, int quantity) {
-        this.name = name;
-        this.price = price;
-        this.isExemptFromTax = isExemptFromTax;
-        this.isImported = isImported;
-        this.quantity = quantity;
+        setName(name);
+        setPrice(price);
+        setIsExemptFromTax(isExemptFromTax);
+        setIsImported(isImported);
+        setQuantity(quantity);
     }
 
     public Item(Item source) {

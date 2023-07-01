@@ -11,8 +11,7 @@ public class Payment {
 
     public Payment(Integer id, List<Item> items) {
         setId(id);
-        this.itemsList = new ArrayList<>();
-        items.forEach(item -> itemsList.add(new Item(item)));
+        setItemsList(items);
     }
 
     public int getId() {
@@ -21,6 +20,12 @@ public class Payment {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    // Imposto copia profonda in setter per buona pratica
+    public void setItemsList (List<Item> items) {
+        this.itemsList = new ArrayList<>();
+        items.forEach(item -> itemsList.add(new Item(item)));
     }
 
     // calcolo tot tasse per tutti items di questo pagamento
