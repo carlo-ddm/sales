@@ -21,10 +21,11 @@ public class PaymentService implements TaxCalculatorService {
     return payment;
   }
 
+  // 1) inutilizzato ma x crud --> ovviamente anche in repository storage
   public void updatePayment(Payment payment) {
     this.repository.updatePayment(payment.clone());
   }
-
+  // 2) inutilizzato ma x crud  --> ovviamente anche in repository storage
   public void deletePayment(Integer id) {
     this.repository.deletePayment(id);
   }
