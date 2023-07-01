@@ -96,7 +96,7 @@ public class Main {
 
         // La linea di codice appena sotto corregge l'output 2 ma sballa completamente l'output 3  L'errore è in questo punto ma non riesco a correggerlo!!! L'errore ha a che fare con "imported" che all'ultima voce dell'outout tre deve essere considerato come un nome e non come realmente importato e quindi tassabile.
 
-        // Controllo nel caso la parola "importd" facesse solo parte del nome. Se così fosse non verrebbe considerata tassabile per importazione. (Input3, ultima voce.)
+        // Controllo nel caso la parola "importd" fa parte del nome. Se così fosse non verrebbe considerata tassabile per importazione. (Input3, ultima voce.)
                 //    && !(inputLine.indexOf("imported") > inputLine.indexOf(parts[1])) ?  true :  false;
 
         // Ennesimo tentativo di correzione prima e ultima voce di Output 3, fallito. L'approccio di cui sopra funzionava nella versione semplificata. Nel refactoring incontro un problema che non sono riuscito a risolvere. Di seguito un tentativo di correzione che non ha funzionato, ma che reputo valido (arroccato ma valido).
