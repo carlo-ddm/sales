@@ -24,6 +24,10 @@ Per eseguire il progetto, compila e avvia il file `Main.java`. L'applicazione le
 
 E' presente un bug che non sono riuscito a risolvere. Il bug è relativo al calcolo sulla tassa di importazione sull'input 3. Il codice è commentato in quello specifico punto, lì offro una soluzione ragionevole al problema. Tuttavia il problema persiste.
 
+## Nota 2
+
+Bug risolto. Il problema era determinato dal non aver considerato l'ultima voce di input3 tra gli articoli esentasse e da un'errata configurazione dell'algoritmo di arrotondamento.
+
 ## Licenza
 
 Questo progetto è rilasciato sotto la licenza MIT.
