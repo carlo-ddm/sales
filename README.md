@@ -28,6 +28,10 @@ E' presente un bug che non sono riuscito a risolvere. Il bug è relativo al calc
 
 Bug risolto. Il problema era determinato dal non aver considerato l'ultima voce di input3 tra gli articoli esentasse e da un'errata configurazione dell'algoritmo di arrotondamento.
 
+## Nota 3
+
+I commenti non sono stati rimossi per permettere l'osservazione delle diverse possibili soluzioni in caso di errore. 
+
 ## Licenza
 
 Questo progetto è rilasciato sotto la licenza MIT.
