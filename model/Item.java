@@ -82,11 +82,21 @@ public class Item {
             salesTax = salesTax.add(price.multiply(BigDecimal.valueOf(TaxRate.IMPORT_DUTY.getRate())));
         }
 
-        // arrotondo al più vicino 0.05 (Ma non funziona maledizioneeee!!!!)
-        salesTax = salesTax.divide(BigDecimal.valueOf(0.05));
-        salesTax = new BigDecimal(Math.round(salesTax.doubleValue()));
+        // ERRORE
+        // ||||||arrotondo al più vicino 0.05 (Ma non funziona maledizioneeee!!!!)
+        // ||||||salesTax = salesTax.divide(BigDecimal.valueOf(0.05));
+        // ||||||salesTax = new BigDecimal(Math.round(salesTax.doubleValue()));
+        // ||||||salesTax = salesTax.multiply(BigDecimal.valueOf(0.05));
+
+        // Soluzione
+        // 1) divido salesTax per 0,05
+        // 2) soluzione arrotondamento [CEALING] --> ARROTONDO  a numero intero + vicino e in caso di parità a num int maggiore
+        // moltiplico risultato per 0,05 x ottenere tasse arrotondate 
+        salesTax = salesTax.divide(BigDecimal.valueOf(0.05), 0, RoundingMode.CEILING);
+        salesTax = salesTax.setScale(0, RoundingMode.HALF_UP);
         salesTax = salesTax.multiply(BigDecimal.valueOf(0.05));
 
+        // moltplico tassa singolo articolo x quantità --> ora ho item con giusta tassazione
         return salesTax.multiply(BigDecimal.valueOf(quantity));
     }
 
